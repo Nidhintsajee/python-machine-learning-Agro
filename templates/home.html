@@ -1,0 +1,179 @@
+
+{% extends 'index.html' %}
+{% block content %}
+<style type="text/css">
+	.ekm {
+		margin-left: 100px;
+		margin-top: 50px;
+	}
+	.ala {
+		margin-left: 650px;
+
+		margin-top: -450px;
+	}
+</style>
+       <div class="contact wthree all_pad">
+		<div class="container">
+		<h3 class="title"><u>Analysis of Agricultural Data</u></h3>
+
+			 <div class="bs-docs-example">
+			  			 <div class="home-info">
+			 	<h4>The Need for Climate Prediction Information for Agriculture*</h4>
+			 	<p>Farmers grow crops on the field scale (individual farm acres impacted by field-scale climate factors) but sell crops into an international market (impacted by global-scale climatic factors).  Local climate predictions improve crop production planning and subsequently impact individual farmer yields.  Global and regional scale climate factors impact the prices farmers receive for their crop as well as their decisions of what crops to grow.</p>
+			 	<p>Climate predictions of monthly, seasonal and yearly weather influence farmer decisions that are important to the individual growing season of a crop.  Multi-year and decadal predictions of weather influence farmer investment decisions that can span several growing seasons.</p>
+			 	<p>To maximize the value of climate prediction information for decision making the information needs to be combined and provided with other environmental information such as ground cover, soil type, soil organic matter, soil radiation, soil temperature, soil moisture and long-term drought conditions.  This integration of environmental information will help farmers and agribusinesses utilize the information more effectively in decision making. </p>
+			 </div>
+
+
+			 
+{% if msg %}
+<div class="cluster" style="margin-left: 300px; margin-top: 100px;">
+			 	<form method="post" action="{% url 'clustered_url' %}">
+			 	{% csrf_token %}
+			 		<input type="submit" class="btn btn-info" value="Cluster Graph >>">
+			 	
+			 	</form>
+
+			 </div>
+<div class="ekm">
+{% if ernakulam %}
+
+	{{ ernakulam.as_html }}
+{% endif %}
+</div>
+<div class="ala">
+{% if alappuzha %}
+	{{ alappuzha.as_html }}
+{% endif %}
+</div>
+<div class="ekm">
+{% if idukki %}
+	{{ idukki.as_html }}
+{% endif %}
+</div>
+<div class="ala">
+{% if kannur %}
+{{ kannur.as_html }}
+{% endif %}
+</div>
+<div class="ekm">
+
+	{% if kasaragod %}
+	{{ kasaragod.as_html }}
+	{% endif %}
+	</div>
+	<div class="ala">
+
+	{% if kollam %}
+	{{ kollam.as_html }}
+	{% endif %}
+</div>
+<div class="ekm">
+
+	{% if kottayam %}
+	{{ kottayam.as_html }}
+	{% endif %}
+</div>
+	<div class="ala">
+
+	{% if kozhikode %}
+	{{ kozhikode.as_html }}
+	{% endif %}
+</div>
+<div class="ekm">
+
+	{% if malappuram %}
+	{{ malappuram.as_html }}
+	{% endif %}
+</div>
+	<div class="ala">
+
+	{% if palakad %}
+	{{ palakad.as_html }}
+	{% endif %}
+</div>
+<div class="ekm">
+
+	{% if pathanamthitta %}
+	{{ pathanamthitta.as_html }}
+	{% endif %}
+</div>
+	<div class="ala">
+
+	{% if tvm %}
+	{{ tvm.as_html }}
+	{% endif %}
+</div>
+<div class="ekm">
+
+	{% if tsr %}
+	{{ tsr.as_html }}
+	{% endif %}
+</div>
+	<div class="ala">
+
+	{% if wayanad %}
+	{{ wayanad.as_html }}
+	{% endif %}
+</div>
+
+{% else %}
+
+			  <div class="contents" style="margin-top: 10px;">
+			  	<form action="{% url 'home_url' %}" method="post" enctype="multipart/form-data" >
+			  	{% csrf_token %}
+			  	<label class="upload">Upload Csv file :</label>
+			  	<input type="file" name="file1" ><br>
+			  	<input class="uploadfile" type="submit" name="Submit" >
+			  	</form>
+			  </div>
+			  {% endif %}
+			<div class="images"></div>
+
+
+          </div>
+		
+	</div>
+</div> 
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<div class="footer w3agile">
+	<div class="container">
+		<!-- <div class="foo-arr text-center"><img src="images/arrows.png" alt=" "/></div> -->
+		<!-- <div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><p>123K Avenue, 5th Street, <span>New York City</span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><p><a href="mailto:example@mail.com">mail@example1.com</a><span><a href="mailto:example@mail.com">mail@example2.com</a></span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><p>+123 2222 222<span>+123 456 7890</span></p>
+		</div> -->
+		<div class="clearfix"></div>
+		<div class="copyrights w3">
+			<div class="copy-left">
+				<p>  2016 Agro. All rights reserved | Design by <a href="http://w3layouts.com/">Atees</a></p>
+			</div>
+			<div class="copy-right agileinfo">
+				<ul class="fb_icons">
+					<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+    {% endblock %}

@@ -1,0 +1,55 @@
+<script>
+$(function () {
+    $('#{{ chart.get_html_id }}').highcharts({
+        chart: {
+            type: "{{ chart.get_chart_type }}",
+            options3d: {
+                enabled: true,
+                alpha: 45
+            },
+            backgroundColor: {
+            linearGradient: [500, 0, 500, 0],
+            stops: [
+                [0, '#2a2a2b'],
+                [1, '#3e3e40']
+            ]
+            },                        
+        },
+        title: {
+            text: "{{ chart.get_options.title }}",
+            align: 'center',
+            verticalAlign: 'middle',
+            style:{
+                color:'white',
+            },
+            y: 5,
+            x: -25
+        },
+        tooltip: {
+            pointFormat: '<h1>{series.name} : </h1><br> <b>Rs. {point.y:.2f}</b><br> <br> Gross Total : <br> <b>Rs. {point.total:.2f}</b>'
+        },
+        plotOptions: {
+            boxplot: {
+                fillColor: '#505053'
+            },    
+            verticalAlign: 'middle',
+            pie: {
+                dataLabels:{
+                    enabled: true,
+                    style: {
+                        color: 'white',
+                    },
+                    connectorColor: 'white'
+                },
+                innerSize: 160,
+                depth: 45,
+
+                },
+        },   
+        series: [{
+            name: "{{ chart.get_series_name }}",
+            data: {{ chart.get_series_json|safe }}
+        }]
+    });
+});
+</script>

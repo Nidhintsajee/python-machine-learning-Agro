@@ -1,0 +1,144 @@
+{% extends 'index.html' %}
+{% block content %}
+       <div class="contact wthree all_pad">
+		<div class="container">
+		<h3 class="title"><u>Analysis of Agricultural Data</u></h3>
+
+			 <div class="bs-docs-example">
+			  <div class="col-md-6">
+			 	
+			 	<div class="form-predict">
+<!-- 			 		<form action="" method="post" name="form1">
+			 			{% csrf_token %}
+			 			<label for="year">Year :</label>
+			 			<select name="year">
+			 				<option value="2005">2005</option>
+			 				<option value="2006">2006</option>
+			 				<option value="2007">2007</option>
+			 				<option value="2008">2008</option>
+			 				<option value="2009">2009</option>
+			 				<option value="2010">2010</option>
+			 				<option value="2011">2011</option>
+			 				<option value="2012">2012</option>
+			 				<option value="2013">2013</option>
+			 				<option value="2014">2014</option>
+			 				<option value="2015">2015</option>
+			 				<option value="2016">2016</option>
+			 				<option value="2017">2017</option>
+			 				<option value="2018">2018</option>
+			 				<option value="2019">2019</option>
+			 				<option value="2020">2020</option>
+			 				<option value="2021">2021</option>
+			 				<option value="2022">2022</option>
+			 				<option value="2023">2023</option>
+			 				<option value="2024">2024</option>
+			 				<option value="2025">2025</option>
+			 			</select><br>
+			 			<label for="rain">Enter Rainfall(mm)</label>
+			 			<input type="text" name="rain" value="" placeholder="Input rainfal in mm" required=""><br>
+			 			<input type="submit" name="sbt1" value="Predict" class="btn btn-info">
+			 		</form> -->
+			 		{% if result %}
+			 			<p style="color: red; text-align: center;"> Predicted production for the year {{ year }} is {{ result }} </p>
+
+
+			 		{% else %}
+			 			<h3 style="text-align: center; color: green; margin-bottom: 5px;">Add Credential Information To predict production</h3>
+			 		<form action="{% url 'agropredict_url' %}" method="post" name="form1">
+			 		{% csrf_token %}
+					<div class="form-group">
+
+      					<label for="sel1">Year</label><br>
+					      <select class="form-control" id="sel1" name="sel1" style="margin-top: 5px;">
+			 				<option value="2018">2018</option>
+			 				<option value="2019">2019</option>
+			 				<option value="2020">2020</option>
+			 				<option value="2021">2021</option>
+			 				<option value="2022">2022</option>
+			 				<option value="2023">2023</option>
+			 				<option value="2024">2024</option>
+			 				<option value="2025">2025</option>
+			 				<option value="2026">2026</option>
+			 				<option value="2027">2027</option>
+			 				<option value="2028">2028</option>
+			 				<option value="2029">2029</option>
+			 				<option value="2030">2030</option>
+					      </select>
+					      <br>
+					      <label for="sel2">Districts</label><br>
+					      <select class="form-control" id="sel2" name="sel2" style="margin-top: 5px;">
+			 				<option value="ALAPPUZHA">ALAPPUZHA</option>
+			 				<option value="ERNAKULAM">ERNAKULAM</option>
+			 				<option value="IDUKKI">IDUKKI</option>
+			 				<option value="KANNUR">KANNUR</option>
+			 				<option value="KASARAGOD">KASARAGOD</option>
+			 				<option value="KOLLAM">KOLLAM</option>
+			 				<option value="KOTTAYAM">KOTTAYAM</option>
+			 				<option value="KOZHIKODE">KOZHIKODE</option>
+			 				<option value="MALAPPURAM">MALAPPURAM</option>
+			 				<option value="PALAKKAD">PALAKKAD</option>
+			 				<option value="PATHANAMTHITTA">PATHANAMTHITTA</option>
+			 				<option value="THIRUVANANTHAPURAM">THIRUVANANTHAPURAM</option>
+			 				<option value="THRISSUR">THRISSUR</option>
+			 				<option value="WAYANAD">WAYANAD</option>
+					      </select>
+					      <br>
+
+
+					     <label for="Area">Enter Area (mm)</label>
+			 			<input type="numbers" class="form-control" placeholder="Enter Area " name="area" style="margin-top: 5px;"><br>
+			 			<label for="rainfall">Enter Rainfall (mm)</label>
+			 			<input type="numbers" class="form-control" placeholder="Enter Rainfall (mm)" name="rainfall" style="margin-top: 5px;"><br>
+			 			<input type="submit" name="sbt1" value="Predict" class="btn btn-info" style="margin-top: 10px;">
+						</div>
+			 		</form>
+
+			 		{% endif %}
+			 	</div>
+
+
+			 </div>
+			 
+            
+          </div>
+	</div>
+</div> 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<div class="footer w3agile">
+	<div class="container">
+		<!-- <div class="foo-arr text-center"><img src="images/arrows.png" alt=" "/></div> -->
+		<!-- <div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><p>123K Avenue, 5th Street, <span>New York City</span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><p><a href="mailto:example@mail.com">mail@example1.com</a><span><a href="mailto:example@mail.com">mail@example2.com</a></span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><p>+123 2222 222<span>+123 456 7890</span></p>
+		</div> -->
+		<div class="clearfix"></div>
+		<div class="copyrights w3">
+			<div class="copy-left">
+				<p>  2016 Agro. All rights reserved | Design by <a href="http://w3layouts.com/">Atees</a></p>
+			</div>
+			<div class="copy-right agileinfo">
+				<ul class="fb_icons">
+					<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+    {% endblock %}

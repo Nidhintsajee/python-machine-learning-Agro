@@ -1,0 +1,169 @@
+
+{% extends 'index.html' %}
+{% block content %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<style type="text/css">
+	.ekm {
+		margin-left: 100px;
+		margin-top: 50px;
+	}
+	.ala {
+		margin-left: 650px;
+
+		margin-top: -450px;
+	}
+</style>
+       <div class="contact wthree all_pad">
+		<div class="container">
+		<h3 class="title"><u>Clustering Graph</u></h3>
+
+			 <div class="bs-docs-example">
+			  			 
+
+			 
+
+	<div id="container" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+	
+Highcharts.chart('container', {
+    chart: {
+        type: 'scatter',
+        zoomType: 'xy'
+    },
+    title: {
+        text: 'Clustering of rainfall based on Years'
+    },
+    subtitle: {
+        text: 'Source: Heinz  2003'
+    },
+    xAxis: {
+        title: {
+            enabled: true,
+            text: 'Prod'
+        },
+        startOnTick: true,
+        endOnTick: true,
+        showLastLabel: true
+    },
+    yAxis: {
+        title: {
+            text: 'Rain (mm)'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'left',
+        verticalAlign: 'top',
+        x: 100,
+        y: 70,
+        floating: true,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+        borderWidth: 1
+    },
+    plotOptions: {
+        scatter: {
+            marker: {
+                radius: 5,
+                states: {
+                    hover: {
+                        enabled: true,
+                        lineColor: 'rgb(100,100,100)'
+                    }
+                }
+            },
+            states: {
+                hover: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x} cm, {point.y} kg'
+            }
+        }
+    },
+    series: [{
+        name: 'a',
+        color: 'rgb(255,0,0)',
+        data: {{r}}
+
+    },{
+    	name: 'b',
+        color: 'rgb(0,255,0)',
+        data: {{g}}
+    },{
+    	name: 'c',
+        color: 'rgb(0,0,255)',
+        data: {{b}}
+    },{
+    	name: 'd',
+        color: 'rgb(0,255,255)',
+        data: {{c}}
+    },{
+    	name: 'e',
+        color: 'rgb(0,0,0)',
+        data: {{k}}
+    },{
+    	name: 'f',
+        color: 'rgb(255,255,0)',
+        data: {{y}}
+    },{
+    	name: 'g',
+        color: 'rgb(220,20,60)',
+        data: {{m}}
+    }]
+});
+
+</script>			
+
+          </div>
+		
+	</div>
+</div> 
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<div class="footer w3agile">
+	<div class="container">
+		<!-- <div class="foo-arr text-center"><img src="images/arrows.png" alt=" "/></div> -->
+		<!-- <div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><p>123K Avenue, 5th Street, <span>New York City</span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><p><a href="mailto:example@mail.com">mail@example1.com</a><span><a href="mailto:example@mail.com">mail@example2.com</a></span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><p>+123 2222 222<span>+123 456 7890</span></p>
+		</div> -->
+		<div class="clearfix"></div>
+		<div class="copyrights w3">
+			<div class="copy-left">
+				<p>  2016 Agro. All rights reserved | Design by <a href="http://w3layouts.com/">Atees</a></p>
+			</div>
+			<div class="copy-right agileinfo">
+				<ul class="fb_icons">
+					<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+    {% endblock %}

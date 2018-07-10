@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% block content %}
+       <div class="contact wthree all_pad">
+	<div class="container">
+		<h3 class="title">contact<span></span></h3>
+			<div class="contact-form">
+				<div class="col-md-6 contact-grid">
+				<h3>Enquiry Form</h3>
+				{% if msg %}
+				<h4 style="color: green;">{{ msg }}</h4>
+				{% endif %}
+					<form action="{% url 'contact_url' %}" method="post">
+					{% csrf_token %}
+						<p class="your-para">Name:</p>
+						<input type="text" value="Type Here" name="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Type Here';}">
+						<p class="your-para">Email:</p>
+						<input type="email" value="Type Here" name="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Type Here';}">
+						<p class="your-para">Message:</p>
+						<textarea name="Content" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type Here';}" required="">Type Here</textarea>
+						<div class="send">
+							<input type="submit" value="Send">
+						</div>
+					</form>
+				</div>
+				<div class="col-md-6 contact-in">
+					<h2> Welcome to Agro</h2>
+					<p class="para1">We are the best online Predictors for pediction of climate for crops . We provide best facilities to our clients to make the business successful</p>
+					<div class="more-address"> 
+						<div class="address-more">
+							<p>Agro</p>
+							<p>WORLDVIEWER DOT COM (INDIA) PVT. LTD G- 66 </p>
+							<p>Elders Forum Road, Panampilly Nagar </p>
+							<p>Cochin - 682 036, Kerala.</p>
+						</div>
+						<div class="address-left">
+							<p>Tel:1115550001</p>
+							<p>Fax:190-4509-494</p>
+							<p><a href="mailto:info@example.com">mail@example.com</a></p>
+						</div>
+						<div class="clearfix"> </div>
+				      </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+	</div>
+</div>
+
+<div class="footer w3agile">
+	<div class="container">
+		<!-- <div class="foo-arr text-center"><img src="images/arrows.png" alt=" "/></div> -->
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><p>123K Avenue, 5th Street, <span>New York City</span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><p><a href="mailto:example@mail.com">mail@example1.com</a><span><a href="mailto:example@mail.com">mail@example2.com</a></span></p>
+		</div>
+		<div class="col-md-4 footer-left">
+			<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><p>+123 2222 222<span>+123 456 7890</span></p>
+		</div>
+		<div class="clearfix"></div>
+		<div class="copyrights w3">
+			<div class="copy-left">
+				<p>  2016 Agro. All rights reserved | Design by <a href="http://w3layouts.com/">Atees</a></p>
+			</div>
+			<div class="copy-right agileinfo">
+				<ul class="fb_icons">
+					<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
+					<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+    {% endblock %}
